@@ -7,9 +7,13 @@
 	<small>
 		{{car.year}}
 	</small>
+	{% if car.car_img %}
+    <p><img src="{{car.car_img.url}}" alt="Cinque Terre" width="450" height="300" class="alert alert-light" class="card-img-top" role="alert" ></p>
+	{% endif %}
 </h1>
 
-
+<a href="{% url 'car-delete' car.id %}" class="btn btn-outline-primary btn-block">Delete</a>
+<a href="{% url 'car-update' car.id %}" class="btn btn-outline-primary btn-block">Update</a>
 
 
 <hr>

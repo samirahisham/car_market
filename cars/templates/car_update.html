@@ -5,7 +5,7 @@
 {% block content %}
     
 <div class="jumbotron">
-    <form action ="{% url 'car-update' car.id %}" method="POST" enctype="multipart/fom-data">
+    <form action ="{% url 'car-update' car.id %}" method="POST" enctype="multipart/from-data">
         {% csrf_token %}
         {{form|crispy}}
 
