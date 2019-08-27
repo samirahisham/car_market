@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    
+
+<div class="card">
+        <h5 class="card-header">Add Car</h5>
+        <div class="card-body">
+          <p class="card-text">
+              <form action="{% url 'car-create' %}" method="POST">
+                  {% csrf_token %}
+                  {{form|crispy}}
+                  <input type="submit" value="Create" class="btn btn-outline-success">
+              </form>
+          </p>
+        </div>
+      </div>
+{% endblock content %}

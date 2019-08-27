@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Car List</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+	
+	
 	{% for car in cars %}
 		<a href="{{car.get_absolute_url}}">
 			<h1>
@@ -12,8 +11,12 @@
 					{{car.year}}
 				</small>
 			</h1>
+			
 		</a>
+		<a href="{% url 'car-delete' car.id %}" class="btn btn-outline-primary btn-block">Delete</a>
+		<a href="{% url 'car-update' car.id %}" class="btn btn-outline-primary btn-block">Update</a>
 		<hr>
 	{% endfor %}
-</body>
-</html>
+
+	<a href=""></a>
+{% endblock content %}
